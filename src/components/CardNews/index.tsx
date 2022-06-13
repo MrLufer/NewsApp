@@ -2,7 +2,17 @@ import React from 'react';
 import {View, Text} from 'react-native';
 import StyleCard from './style';
 
-const CardNews = ({news}: any) => {
+interface INews {
+  title: string;
+  body: string;
+  userId: number;
+}
+
+interface IProps {
+  news: INews;
+}
+
+const CardNews = ({news}: IProps) => {
   return (
     <View style={StyleCard.container}>
       <Text style={StyleCard.title}>{news.title}</Text>

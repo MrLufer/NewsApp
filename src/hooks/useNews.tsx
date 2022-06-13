@@ -47,7 +47,6 @@ const useNews = () => {
   const getNews = async () => {
     if (validateLimit) {
       const res = await typicodeApi.get(`/users/${user.current}/posts`);
-      console.log('a');
       user.current = user.current + 1;
       saveNews([...newsList, ...res.data], user.current);
     }
